@@ -185,7 +185,7 @@ SUM(horas_economizadas) / SUM(horas_totais)
 
 ## 📌 10. Links Importantes
 
-* **Dashboard (Looker Studio):** [Looker Studio]([https://lookerstudio.google.com/reporting/6f13e190-cc9b-44b3-8044-c603cfb119cc](https://lookerstudio.google.com/reporting/6f13e190-cc9b-44b3-8044-c603cfb119cc))
+* **Dashboard (Looker Studio):** [Looker Studio](https://lookerstudio.google.com/reporting/6f13e190-cc9b-44b3-8044-c603cfb119cc)
 * **Planilha intermediária (Google Sheets):** [Google Sheets](https://docs.google.com/spreadsheets/d/1jgw7ri9L8XyLrVRAeubjP291Y0Hq-hTIa-NzjGdoTFI/edit?usp=sharing)
 
 ---
