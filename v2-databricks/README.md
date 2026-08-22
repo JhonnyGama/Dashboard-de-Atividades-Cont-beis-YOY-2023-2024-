@@ -93,11 +93,12 @@ Essa evolução demonstra que o projeto não foi apenas redesenhado: ele foi rec
 
 ## Reprodutibilidade
 
-O gerador de dados utilizado no projeto está disponível em [`src/gerar_dados.py`](../src/gerar_dados.py). Os dados são artificiais e destinados somente a estudo e demonstração técnica.
+O notebook consolidado está disponível em [`notebooks/dashboard_atividades_contabeis_etl.py`](../notebooks/dashboard_atividades_contabeis_etl.py). Ele registra a geração dos dados e o fluxo Bronze → Silver → Gold utilizado pelo dashboard.
+
+O gerador isolado também está disponível em [`src/gerar_dados.py`](../src/gerar_dados.py). A semente aleatória `42` permite reproduzir os mesmos totais exibidos no dashboard. Os dados são artificiais e destinados somente a estudo e demonstração técnica.
 
 ## Próximas evoluções
 
-- Versionar o notebook e as consultas SQL exportadas do Databricks.
 - Adicionar validações de qualidade dos dados.
 - Automatizar a execução e a validação entre as camadas Bronze, Silver e Gold.
 - Incluir novos períodos para ampliar a análise temporal.
