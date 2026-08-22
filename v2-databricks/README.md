@@ -4,6 +4,8 @@
 
 A V2 evolui o projeto original ao levar a análise para o Databricks. O objetivo é apresentar, de forma direta, como o ganho de automação alterou o esforço necessário para atividades contábeis entre 2023 e 2024.
 
+Além do resultado analítico, o projeto foi desenvolvido como um laboratório de aprendizagem para entender o Databricks na prática e aplicar a arquitetura Medalhão em suas camadas Bronze, Silver e Gold.
+
 [Abrir dashboard publicado](https://dbc-cab2dac6-3287.cloud.databricks.com/dashboardsv3/01f19e65b1a11877a1941640dec970c5/published?o=7474652829983420)
 
 ## Perguntas respondidas
@@ -17,13 +19,31 @@ A V2 evolui o projeto original ao levar a análise para o Databricks. O objetivo
 
 ```mermaid
 flowchart LR
-    A[Python] --> B[CSV sintético]
-    B --> C[Databricks]
-    C --> D[Agregações]
+    A[Python e CSV] --> B[Bronze: dados brutos]
+    B --> C[Silver: dados tratados]
+    C --> D[Gold: indicadores]
     D --> E[Dashboard V2]
 ```
 
-O dataset sintético gerado no projeto original foi utilizado no Databricks, onde os indicadores anuais foram consolidados e disponibilizados para a camada de visualização.
+O dataset sintético gerado no projeto original foi utilizado no Databricks e organizado segundo a arquitetura Medalhão:
+
+- **Bronze:** ingestão e preservação dos dados brutos, mantendo uma referência próxima da fonte.
+- **Silver:** tratamento, padronização e preparação dos campos usados nas análises.
+- **Gold:** consolidação das métricas anuais consumidas pelos KPIs e gráficos do dashboard.
+
+Essa separação ajudou a entender como o dado evolui da ingestão até o consumo analítico, além de tornar mais clara a responsabilidade de cada etapa.
+
+## Uso de IA no processo de aprendizagem
+
+A IA generativa foi utilizada como uma ferramenta de apoio durante a construção da V2. Ela ajudou a:
+
+- compreender a navegação e os recursos do Databricks;
+- discutir o propósito das camadas Bronze, Silver e Gold;
+- investigar erros e interpretar comportamentos da plataforma;
+- transformar perguntas de negócio em métricas e visualizações;
+- revisar decisões sem substituir a validação prática no ambiente.
+
+O uso de IA faz parte da metodologia do projeto: aprender por meio de perguntas, testes, erros e ajustes diretamente no Databricks.
 
 ## Estrutura do dataset
 
@@ -67,7 +87,7 @@ O dataset sintético gerado no projeto original foi utilizado no Databricks, ond
 
 ## O que mudou em relação à V1
 
-A V1 priorizou a construção do dataset, a conexão via Google Sheets e uma análise operacional no Looker Studio. A V2 reaproveita o mesmo problema de negócio para praticar o Databricks, consolidar métricas e criar uma leitura executiva mais enxuta.
+A V1 priorizou a construção do dataset, a conexão via Google Sheets e uma análise operacional no Looker Studio. A V2 reaproveita o mesmo problema de negócio para praticar o Databricks, estruturar os dados nas camadas Bronze, Silver e Gold, consolidar métricas e criar uma leitura executiva mais enxuta.
 
 Essa evolução demonstra que o projeto não foi apenas redesenhado: ele foi reconstruído em uma nova plataforma, com maior foco em processamento analítico, SQL, definição de indicadores e organização do fluxo do dado.
 
@@ -79,5 +99,5 @@ O gerador de dados utilizado no projeto está disponível em [`src/gerar_dados.p
 
 - Versionar o notebook e as consultas SQL exportadas do Databricks.
 - Adicionar validações de qualidade dos dados.
-- Organizar o fluxo em camadas de ingestão, transformação e consumo.
+- Automatizar a execução e a validação entre as camadas Bronze, Silver e Gold.
 - Incluir novos períodos para ampliar a análise temporal.
