@@ -47,6 +47,8 @@ Entre 2023 e 2024, as horas economizadas cresceram **395,83%**, passando de 48 p
 ├── README.md
 ├── assets/
 │   └── dashboard-databricks-v2.png
+├── notebooks/
+│   └── dashboard_atividades_contabeis_etl.py
 ├── src/
 │   └── gerar_dados.py
 ├── v1-looker-studio/
