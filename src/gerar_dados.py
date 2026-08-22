@@ -1,7 +1,7 @@
 import numpy as np
 import pandas as pd
 
-rng = np.random.default_rng()
+rng = np.random.default_rng(42)
 
 atividades_base = [
     "Provisão de Notas",
