@@ -4,7 +4,7 @@ Projeto de dados criado para analisar a evolução da eficiência em atividades 
 
 Este repositório registra duas etapas do mesmo projeto. A primeira versão foi construída no Looker Studio; a segunda concentra preparação, análise e visualização no Databricks, tornando a evolução técnica visível no próprio portfólio.
 
-A V2 também foi conduzida como um projeto de aprendizagem prática: a arquitetura Medalhão foi aplicada para compreender o papel das camadas Bronze, Silver e Gold, com IA generativa como apoio durante o estudo e o desenvolvimento.
+A V2 também foi conduzida como um projeto de aprendizagem prática: os dados foram gerados diretamente em Python no Databricks e organizados com a arquitetura Medalhão para compreender o papel das camadas Bronze, Silver e Gold. A IA generativa foi utilizada como apoio durante o estudo e o desenvolvimento.
 
 ## Acesse o projeto
 
@@ -17,7 +17,7 @@ A V2 também foi conduzida como um projeto de aprendizagem prática: a arquitetu
 | --- | --- | --- |
 | Camada de visualização | Looker Studio | Databricks Dashboards |
 | Fonte analítica | Google Sheets | Dataset no Databricks |
-| Preparação dos dados | Python e CSV | Processamento e agregações no Databricks |
+| Preparação dos dados | Python e CSV | Python, PySpark e SQL no Databricks |
 | Arquitetura | Fluxo direto para o Google Sheets | Medalhão: Bronze, Silver e Gold |
 | Abordagem visual | Visão operacional detalhada | Resumo executivo de eficiência |
 | Principal aprendizado | Construção de métricas e narrativa visual | Centralização do fluxo analítico e evolução em SQL |
