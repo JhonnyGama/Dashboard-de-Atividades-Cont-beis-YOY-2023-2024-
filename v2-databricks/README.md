@@ -19,13 +19,13 @@ Além do resultado analítico, o projeto foi desenvolvido como um laboratório d
 
 ```mermaid
 flowchart LR
-    A[Python e CSV] --> B[Bronze: dados brutos]
+    A[Python no Databricks] --> B[Bronze: dados brutos]
     B --> C[Silver: dados tratados]
     C --> D[Gold: indicadores]
     D --> E[Dashboard V2]
 ```
 
-O dataset sintético gerado no projeto original foi utilizado no Databricks e organizado segundo a arquitetura Medalhão:
+Os dados sintéticos foram gerados diretamente por código Python no Databricks, convertidos para um Spark DataFrame e gravados em tabelas Delta. O fluxo foi organizado segundo a arquitetura Medalhão:
 
 - **Bronze:** ingestão e preservação dos dados brutos, mantendo uma referência próxima da fonte.
 - **Silver:** tratamento, padronização e preparação dos campos usados nas análises.
@@ -95,7 +95,7 @@ Essa evolução demonstra que o projeto não foi apenas redesenhado: ele foi rec
 
 O notebook consolidado está disponível em [`notebooks/dashboard_atividades_contabeis_etl.py`](../notebooks/dashboard_atividades_contabeis_etl.py). Ele registra a geração dos dados e o fluxo Bronze → Silver → Gold utilizado pelo dashboard.
 
-O gerador isolado também está disponível em [`src/gerar_dados.py`](../src/gerar_dados.py). A semente aleatória `42` permite reproduzir os mesmos totais exibidos no dashboard. Os dados são artificiais e destinados somente a estudo e demonstração técnica.
+O gerador isolado também está disponível em [`src/gerar_dados.py`](../src/gerar_dados.py). Ele mantém os dados em memória, sem criar um CSV intermediário. A semente aleatória `42` permite reproduzir os mesmos totais exibidos no dashboard. Os dados são artificiais e destinados somente a estudo e demonstração técnica.
 
 ## Próximas evoluções
 
