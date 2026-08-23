@@ -75,7 +75,3 @@ df_2023 = gerar_dados_ano(2023, multiplicador_automacao=0.4, n=100)
 df_2024 = gerar_dados_ano(2024, multiplicador_automacao=1.0, n=100)
 
 df_final = pd.concat([df_2023, df_2024], ignore_index=True)
-df_final.to_csv(
-    "relatorio_atividades_contabeis_YOY_100_linhas.csv",
-    index=False,
-)
